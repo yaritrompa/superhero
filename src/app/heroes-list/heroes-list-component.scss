@@ -1,0 +1,131 @@
+.hero-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.hero-card {
+  background-color: rgba(255, 255, 255, 0.1); 
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  text-align: center;
+  backdrop-filter: blur(6px); 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+  }
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #222;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+
+    &:disabled {
+      background-color: #999;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  label {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  select {
+    padding: 0.4rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: border 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #007bff;
+      background-color: white;
+    }
+
+    &:hover {
+      border-color: #999;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .controls,
+  .pagination-controls {
+    align-items: center;
+    width: 100%;
+    margin-left: 4%;
+  }
+
+  .controls {
+    gap: 0.5rem;
+
+    label {
+      font-size: 0.9rem;
+    }
+
+    select {
+      width: 100%;
+      max-width: 200px;
+    }
+  }
+
+  .pagination-controls {
+    gap: 0.5rem;
+
+    button {
+      width: 100%;
+      max-width: 150px;
+      font-size: 0.9rem;
+      padding: 0.5rem;
+    }
+
+    span {
+      font-size: 0.9rem;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .hero-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card {
+    width: 100%;
+  }
+}
