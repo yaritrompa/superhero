@@ -1,0 +1,12 @@
+$primary-gradient-start: #667eea;
+$primary-gradient-end: #764ba2;
+ 
+html{
+  min-height: 100vh;
+  background: linear-gradient(135deg, $primary-gradient-start 0%, $primary-gradient-end 100%);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: white;
+}
