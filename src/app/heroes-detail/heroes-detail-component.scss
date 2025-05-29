@@ -48,7 +48,7 @@
     }
 
     p {
-      font-size: 1rem;
+      font-size: 1.6rem;
       margin: 0.3rem 0;
     }
 
@@ -57,9 +57,10 @@
 
       h3 {
         margin-bottom: 0.5rem;
-        font-size: 1.3rem;
+        font-size: 2rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         padding-bottom: 0.3rem;
+        color:rgb(255, 165, 54);
       }
 
       ul {
@@ -71,8 +72,9 @@
       }
 
       li {
-        flex: 1 1 45%; /* dos columnas adaptables */
-        font-size: 1rem;
+        flex: 1 1 45%; 
+        font-size: 1.5rem;
+        color:rgb(255, 165, 54);
       }
     }
   }

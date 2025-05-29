@@ -34,7 +34,6 @@ export class HeroesListComponent implements OnInit {
   loadHeroes(): void {
     this.heroesService.getHeroes(this.page, this.size).subscribe({
       next: (response) => {
-        console.log('Respuesta de la API:', response);
         this.heroes = response.items;
         this.totalPages = response.lastPage;
 
@@ -63,7 +62,7 @@ export class HeroesListComponent implements OnInit {
   }
 
   onPageSizeChange(): void {
-    this.page = 1; // Reiniciar a la primera página cuando cambia el tamaño
+    this.page = 1; 
     this.loadHeroes();
   }
 
