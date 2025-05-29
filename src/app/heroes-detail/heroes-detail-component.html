@@ -1,0 +1,36 @@
+<main *ngIf="!isLoading && hero; else loading">
+  <section class="hero-detail">
+
+    <div class="card">
+      <img [src]="hero.images.sm" [alt]="hero.name" />
+
+      <div class="info">
+        <button class="back-button" (click)="goBack()">← Volver</button>
+        <h1>{{ hero.name }}</h1>
+        <h2>{{ hero.biography.fullName }}</h2>
+        
+
+        <p><strong>Primera aparición:</strong> {{ hero.biography.firstAppearance }}</p>
+        <p><strong>Publisher:</strong> {{ hero.biography.publisher }}</p>
+        <p><strong>Ocupación:</strong> {{ hero.work.occupation }}</p>
+        <p><strong>Base:</strong> {{ hero.work.base }}</p>
+
+        <div class="stats">
+          <h3>Estadísticas:</h3>
+          <ul>
+            <li><strong>Inteligencia:</strong> {{ hero.powerstats.intelligence }}</li>
+            <li><strong>Fuerza:</strong> {{ hero.powerstats.strength }}</li>
+            <li><strong>Velocidad:</strong> {{ hero.powerstats.speed }}</li>
+            <li><strong>Poder:</strong> {{ hero.powerstats.power }}</li>
+            <li><strong>Combate:</strong> {{ hero.powerstats.combat }}</li>
+            <li><strong>Durabilidad:</strong> {{ hero.powerstats.durability }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<ng-template #loading>
+  <p>Cargando detalles del superhéroe...</p>
+</ng-template>

@@ -1,0 +1,28 @@
+<main>
+  <section>
+    <div class="controls">
+      <label for="pageSize">Héroes por página:</label>
+      <select id="pageSize" [(ngModel)]="size" (change)="onPageSizeChange()">
+        <option *ngFor="let s of sizes" [value]="s">{{ s }}</option>
+      </select>
+    </div>
+
+    <div class="hero-list">
+      <div *ngFor="let hero of heroes" class="hero-card" (click)="goToDetail(hero.id)">
+        <img [src]="hero.images.sm" [alt]="hero.name" class="hero-img" />
+        <h3>{{ hero.biography.fullName || hero.name }}</h3>
+        <p>{{ hero.appearance.gender }}</p>
+      </div>
+    </div>
+
+
+    <div class="pagination-controls">
+      <button (click)="previousPage()" [disabled]="page === 1">Anterior</button>
+      <span>Página {{ page }} de {{ totalPages }}</span>
+      <button (click)="nextPage()" [disabled]="page === totalPages">Siguiente</button>
+    </div>
+  </section>
+</main>
+
+
+
